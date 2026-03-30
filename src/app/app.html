@@ -1,1 +1,10 @@
 <h1>qwbeqweb</h1>
+<div>
+  @if (products.isLoading()) {
+    <p>Loading...</p>
+  } @else if (products.error()) {
+    <p>Error: {{ products.error() }}</p>
+  } @else {
+    {{ products.value() | json | json }}
+  }
+</div>
